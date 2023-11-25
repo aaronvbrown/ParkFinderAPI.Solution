@@ -53,64 +53,64 @@ namespace ParkFinderAPI.Controllers
       return park;
     }
 
-    // // POST api/animals
-    // [HttpPost]
-    // public async Task<ActionResult<Animal>> Post(Animal animal)
-    // {
-    //   _db.Animals.Add(animal);
-    //   await _db.SaveChangesAsync();
-    //   return CreatedAtAction(nameof(GetAnimal), new { id = animal.AnimalId }, animal);
-    // }
+    // POST api/parks
+    [HttpPost]
+    public async Task<ActionResult<Park>> Post(Park park)
+    {
+      _db.Parks.Add(park);
+      await _db.SaveChangesAsync();
+      return CreatedAtAction(nameof(GetPark), new { id = park.ParkId }, park);
+    }
 
-    // // PUT: api/Animals/5
-    // [HttpPut("{id}")]
-    // public async Task<IActionResult> Put(int id, Animal animal)
-    // {
-    //   if (id != animal.AnimalId)
-    //   {
-    //     return BadRequest();
-    //   }
+    // PUT: api/Parks/5
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(int id, Park park)
+    {
+      if (id != park.ParkId)
+      {
+        return BadRequest();
+      }
 
-    //   _db.Animals.Update(animal);
+      _db.Parks.Update(park);
 
-    //   try
-    //   {
-    //     await _db.SaveChangesAsync();
-    //   }
-    //   catch (DbUpdateConcurrencyException)
-    //   {
-    //     if (!AnimalExists(id))
-    //     {
-    //       return NotFound();
-    //     }
-    //     else
-    //     {
-    //       throw;
-    //     }
-    //   }
+      try
+      {
+        await _db.SaveChangesAsync();
+      }
+      catch (DbUpdateConcurrencyException)
+      {
+        if (!ParkExists(id))
+        {
+          return NotFound();
+        }
+        else
+        {
+          throw;
+        }
+      }
 
-    //   return NoContent();
-    // }
+      return NoContent();
+    }
 
-    // private bool AnimalExists(int id)
-    // {
-    //   return _db.Animals.Any(e => e.AnimalId == id);
-    // }
+    private bool ParkExists(int id)
+    {
+      return _db.Parks.Any(e => e.ParkId == id);
+    }
 
-    // // DELETE: api/Animals/5
-    // [HttpDelete("{id}")]
-    // public async Task<IActionResult> DeleteAnimal(int id)
-    // {
-    //   Animal animal = await _db.Animals.FindAsync(id);
-    //   if (animal == null)
-    //   {
-    //     return NotFound();
-    //   }
+    // DELETE: api/Parks/5
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeletePark(int id)
+    {
+      Park park = await _db.Parks.FindAsync(id);
+      if (park == null)
+      {
+        return NotFound();
+      }
 
-    //   _db.Animals.Remove(animal);
-    //   await _db.SaveChangesAsync();
+      _db.Parks.Remove(park);
+      await _db.SaveChangesAsync();
 
-    //   return NoContent();
-    // }
+      return NoContent();
+    }
   }
 }
