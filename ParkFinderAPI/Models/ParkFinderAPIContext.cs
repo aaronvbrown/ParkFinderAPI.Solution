@@ -15,7 +15,8 @@ namespace ParkFinderAPI.Models
         .HasData(
           new Park { ParkId = 1, Name = "Yellowstone", State = "Montana", Type = "National Park"},
           new Park { ParkId = 2, Name = "Crater Lake", State = "Oregon", Type = "National Park"},
-          new Park { ParkId = 3, Name = "Cape Lookout", State = "Oregon", Type = "State Park"}
+          new Park { ParkId = 3, Name = "Cape Lookout", State = "Oregon", Type = "State Park"},
+          new Park { ParkId = 4, Name = "Gifford Pinchot", State = "Washington", Type = "National Forest"}
         );
     }
   }
