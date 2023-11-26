@@ -46,9 +46,15 @@ This API returns information about various recreation areas through an API.
 * None at this time
 * Please report any bugs at the [github repo issues page](https://github.com/aaronvbrown/ParkFinderAPI.Solution/issues)
 
+## Further Exploration
+* [Token-Based Authentication](https://www.yogihosting.com/jwt-api-aspnet-core/)
+* [API Versioning](https://learn.microsoft.com/en-us/shows/visual-studio-toolbox/versioning-aspnet-core-services)
+* [Pagination](https://learn.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page?view=aspnetcore-6.0)
+* [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-6.0)
+* General [Guide to Further Exploration with APIs](https://part-time-evening.learnhowtoprogram.com/c-and-net/building-an-api/further-exploration-with-apis) 
+
 ## Attributions
   
-* <a href="https://commons.wikimedia.org/wiki/File:Factory_icon_blue.svg">Factory_icon.svg: Original by Tichovský Petr, vector by chris 論derivative work: Theanphibian</a>, Public domain, via Wikimedia Commons
 
 
 ## License
