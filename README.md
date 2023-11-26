@@ -43,7 +43,7 @@ This API returns information about various recreation areas through an API.
 * Interact with the API using Postman via **https://Localhost:5001**
 
 ## Known Bugs
-* None at this time
+* Pagination via the "pagination" branch is currently generating a 415 error response.
 * Please report any bugs at the [github repo issues page](https://github.com/aaronvbrown/ParkFinderAPI.Solution/issues)
 
 ## Further Exploration
