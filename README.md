@@ -27,7 +27,7 @@ This API returns information about various recreation areas through an API.
   ```
 * For further database migration assistance, this [lesson](https://part-time-evening.learnhowtoprogram.com/c-and-net/many-to-many-relationships/code-first-development-and-migrations) from learnhowtoprogram.com is helpful.
 * Clone the repository **git clone https://github.com/aaronvbrown/ParkFinderAPI.Solution.git**  in the terminal
-* Navigate to this project's production directory "ParkFinderAI"
+* Navigate to this project's production directory "ParkFinderAPI"
 * Create a file appsettings.json, adding the following code.  (Replace uid and pwd with your own username and password for MySQL)
   ```json
   {
@@ -39,17 +39,35 @@ This API returns information about various recreation areas through an API.
 * Run **dotnet ef database update** from the command line to create a database locally that the project can use.
 * Run **dotnet run** in the command line to start the app
 * Run **dotnet watch run** in the command line to load in development mode with a watcher
+
+## API Documentation
 * A swagger web page is configured to open showing api endpoints here:  **https://localhost:5001/swagger/index.html**
 * Interact with the API using Postman via **https://Localhost:5001**
 
+### Endpoints
+[Base URL:](https://localhost:5000)
+
+#### Request Structure
+'''
+GET /api/{component}
+POST /api/{component}
+UPDATE /api/{component}
+PUT /api/{component}
+DELETE /api/{component}
+
+#### Available Components
+Parks
+
+
+
 ## Known Bugs
-* None at this time
+* Pagination via the "pagination" branch is currently generating a 415 error response.
 * Please report any bugs at the [github repo issues page](https://github.com/aaronvbrown/ParkFinderAPI.Solution/issues)
 
 ## Further Exploration
+* [Pagination](https://learn.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page?view=aspnetcore-6.0)
 * [Token-Based Authentication](https://www.yogihosting.com/jwt-api-aspnet-core/)
 * [API Versioning](https://learn.microsoft.com/en-us/shows/visual-studio-toolbox/versioning-aspnet-core-services)
-* [Pagination](https://learn.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page?view=aspnetcore-6.0)
 * [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-6.0)
 * General [Guide to Further Exploration with APIs](https://part-time-evening.learnhowtoprogram.com/c-and-net/building-an-api/further-exploration-with-apis) 
 
