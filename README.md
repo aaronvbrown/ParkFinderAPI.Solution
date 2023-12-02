@@ -48,15 +48,59 @@ This API returns information about various recreation areas through an API.
 [Base URL:](https://localhost:5000)
 
 #### Request Structure
-'''
+```
 GET /api/{component}
 POST /api/{component}
-UPDATE /api/{component}
-PUT /api/{component}
-DELETE /api/{component}
+UPDATE /api/{component}/{id}
+PUT /api/{component}/{id}
+DELETE /api/{component}/{id}
+```
 
 #### Available Components
 Parks
+
+#### Example Queries
+
+```http://localhost:5000/api/Parks``` (GET, POST)
+```http://localhost:5000/api/Parks/1``` (GET, PUT, DELETE)
+
+Sample GET Response ```http://localhost:5000/api/Parks```:  
+```
+[
+  {
+      "parkId": 1,
+      "name": "Yellowstone",
+      "state": "Montana",
+      "type": "National Park"
+  },
+  {
+      "parkId": 2,
+      "name": "Crater Lake",
+      "state": "Oregon",
+      "type": "National Park"
+  }
+]
+```
+
+Sample POST Request ```http://localhost:5000/api/Parks``` 
+#### Request Body:
+```
+{
+    "name": "Mt St Helens",
+    "state": "Washington",
+    "type": "National Monument"
+}
+```
+
+Sample POST Response:
+```
+{
+    "parkId": 6,
+    "name": "Mt St Helens",
+    "state": "Washington",
+    "type": "National Monument"
+}
+```
 
 
 
