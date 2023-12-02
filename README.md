@@ -42,6 +42,14 @@ This API returns information about various recreation areas through an API.
 * A swagger web page is configured to open showing api endpoints here:  **https://localhost:5001/swagger/index.html**
 * Interact with the API using Postman via **https://Localhost:5001**
 
+## API Documentation
+View available API endpoints through Postman or through the browser via Swagger. 
+
+### Swagger
+
+### Postman
+
+
 ## Known Bugs
 * Pagination via the "pagination" branch is currently generating a 415 error response.
 * Please report any bugs at the [github repo issues page](https://github.com/aaronvbrown/ParkFinderAPI.Solution/issues)
