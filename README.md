@@ -41,17 +41,17 @@ This API returns information about various recreation areas through an API.
 * Run **dotnet watch run** in the command line to load in development mode with a watcher
 
 ## API Documentation
-* A swagger web page is configured to open showing api endpoints here:  **https://localhost:5001/swagger/index.html**
-* Interact with the API using Postman via **https://Localhost:5001**
+* A swagger web page is configured to open showing api endpoints here:  **https://localhost:5000/swagger/index.html**
+* Interact with the API using Postman via **https://localhost:5000**
 
 ### Endpoints
-[Base URL:](https://localhost:5000)
+The base URL is: ***https://localhost:5000***
 
 #### Request Structure
 ```
 GET /api/{component}
 POST /api/{component}
-UPDATE /api/{component}/{id}
+GET /api/{component}/{id}
 PUT /api/{component}/{id}
 DELETE /api/{component}/{id}
 ```
@@ -64,7 +64,7 @@ Parks
 ```http://localhost:5000/api/Parks``` (GET, POST)
 ```http://localhost:5000/api/Parks/1``` (GET, PUT, DELETE)
 
-Sample GET Response ```http://localhost:5000/api/Parks```:  
+##### Sample GET Index Response for ```http://localhost:5000/api/Parks```:  
 ```
 [
   {
@@ -82,8 +82,10 @@ Sample GET Response ```http://localhost:5000/api/Parks```:
 ]
 ```
 
-Sample POST Request ```http://localhost:5000/api/Parks``` 
-#### Request Body:
+##### Sample POST Request ```http://localhost:5000/api/Parks``` 
+
+
+Request Body:
 ```
 {
     "name": "Mt St Helens",
@@ -91,8 +93,7 @@ Sample POST Request ```http://localhost:5000/api/Parks```
     "type": "National Monument"
 }
 ```
-
-Sample POST Response:
+Response Body:
 ```
 {
     "parkId": 6,
@@ -101,6 +102,30 @@ Sample POST Response:
     "type": "National Monument"
 }
 ```
+
+##### Sample GET Response for ```http://localhost:5000/api/Parks/1```:  
+```
+  {
+      "parkId": 1,
+      "name": "Yellowstone",
+      "state": "Montana",
+      "type": "National Park"
+  }
+```
+
+##### Sample PUT Request ```http://localhost:5000/api/Parks/1``` 
+
+Request Body:
+```
+{
+    "parkId":1,
+    "name":"Yellowrock",
+    "state":"Montana",
+    "type":"National Park"
+}
+```
+
+The API should return a  Status 204 No Content response.  Verify update results with a GET request.
 
 
 
