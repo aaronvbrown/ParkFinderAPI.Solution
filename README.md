@@ -135,21 +135,31 @@ The API should return a  Status 204 No Content response.  Verify update results 
 | name | string | optional | complete name of park (ex. {Crater Lake}, {Yellowstone})
 | state | string | optional | complete name of state (ex. {Rhode Island}, {Oregon})
 | type | string | optional | complete type of park (ex. {National Park}, {National Monument})
+| PageSize | int | optional | number of results per page ( defaults to 2, max 3 )
+| PageNumber | int | optional | page number requested (defaults to 1)
 
 Filter results of the Parks index GET request using the above structure.
 
 Example:  ```http://localhost:5000/api/Parks/?type=National Park```
 
+Chain filters together using & to separate the key=value pairs:
+
+Example:  ```http://localhost:5000/api/Parks/?state=washington&PageNumber=2```
 
 
 
 
 ## Known Bugs
-* Pagination via the "pagination" branch is currently generating a 415 error response.
+* Pagination via the "pagination" branch is now working as of 12/3/2023.
 * Please report any bugs at the [github repo issues page](https://github.com/aaronvbrown/ParkFinderAPI.Solution/issues)
 
 ## Further Exploration
-* [Pagination](https://learn.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page?view=aspnetcore-6.0)
+* [Pagination](https://learn.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page?view=aspnetcore-6.0)  
+- Pagination was implemented for this project.  
+- The default page number returned is 1.
+- The default page size is 2 and the max page size is 3.
+
+
 * [Token-Based Authentication](https://www.yogihosting.com/jwt-api-aspnet-core/)
 * [API Versioning](https://learn.microsoft.com/en-us/shows/visual-studio-toolbox/versioning-aspnet-core-services)
 * [CORS](https://learn.microsoft.com/en-us/aspnet/core/security/cors?view=aspnetcore-6.0)
