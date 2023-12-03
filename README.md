@@ -156,7 +156,7 @@ Example:  ```http://localhost:5000/api/Parks/?type=National Park```
 * General [Guide to Further Exploration with APIs](https://part-time-evening.learnhowtoprogram.com/c-and-net/building-an-api/further-exploration-with-apis) 
 
 ## Attributions
-  
+
 
 
 ## License
