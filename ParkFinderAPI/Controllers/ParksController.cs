@@ -16,8 +16,7 @@ namespace ParkFinderAPI.Controllers
 
     // GET api/parks
     [HttpGet]
-    // public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string state, string type)
-    public async Task<ActionResult<IEnumerable<Park>>> Get(ParkParameters parkParameters, string name, string state, string type)
+    public async Task<ActionResult<IEnumerable<Park>>> Get([FromQuery] ParkParameters parkParameters, string name, string state, string type)
     {
       IQueryable<Park> query = _db.Parks.AsQueryable();
 
