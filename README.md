@@ -57,9 +57,9 @@ DELETE /api/{component}/{id}
 ```
 
 #### Available Components
-Parks
+- Parks
 
-#### Example Queries
+#### Example Queries - Parks
 
 ```http://localhost:5000/api/Parks``` (GET, POST)
 ```http://localhost:5000/api/Parks/1``` (GET, PUT, DELETE)
@@ -125,7 +125,22 @@ Request Body:
 }
 ```
 
-The API should return a  Status 204 No Content response.  Verify update results with a GET request.
+The API should return a  Status 204 No Content response.  Verify update results with a GET request for the appropriate parkId.
+
+#### Query String Parameters 
+```GET /api/{component}/?{parameter}={value}```
+
+| Parameter | Data Type | Required/Optional | Description |
+| :---: | :---: | :---: | :---: |
+| name | string | optional | complete name of park (ex. {Crater Lake}, {Yellowstone})
+| state | string | optional | complete name of state (ex. {Rhode Island}, {Oregon})
+| type | string | optional | complete type of park (ex. {National Park}, {National Monument})
+
+Filter results of the Parks index GET request using the above structure.
+
+Example:  ```http://localhost:5000/api/Parks/?type=National Park```
+
+
 
 
 
