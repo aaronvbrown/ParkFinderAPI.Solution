@@ -14,9 +14,9 @@ namespace ParkFinderAPI.Controllers
       _db = db;
     }
 
-    // GET api/animals
+    // GET api/parks
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Park>>> Get(string name, string state, string type)
+    public async Task<ActionResult<IEnumerable<Park>>> Get([FromQuery] ParkParameters parkParameters, string name, string state, string type)
     {
       IQueryable<Park> query = _db.Parks.AsQueryable();
 
@@ -36,7 +36,10 @@ namespace ParkFinderAPI.Controllers
       }
 
 
-      return await query.ToListAsync();
+      return await query
+                    .Skip((parkParameters.PageNumber -1) * parkParameters.PageSize)
+                    .Take(parkParameters.PageSize)
+                    .ToListAsync();
     }
 
     // GET: api/Parks/5
