@@ -39,6 +39,7 @@ namespace ParkFinderAPI.Controllers
 
       return await query
                     .Skip((parkParameters.PageNumber -1) * parkParameters.PageSize)
+                    .Take(parkParameters.PageSize)
                     .ToListAsync();
     }
 
